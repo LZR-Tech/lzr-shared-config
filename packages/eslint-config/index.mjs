@@ -8,6 +8,7 @@ import js from '@eslint/js'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import tsParser from '@typescript-eslint/parser'
 import importPlugin from 'eslint-plugin-import'
+import jsxA11y from 'eslint-plugin-jsx-a11y'
 
 /** @type {import('eslint').Linter.Config[]} */
 export const base = [
@@ -93,10 +94,20 @@ export const react = [
   ...base,
   {
     files: ['**/*.{tsx,jsx}'],
+    plugins: {
+      'jsx-a11y': jsxA11y,
+    },
     rules: {
       // Handbook: Server Components por padrão
+      // === Acessibilidade WCAG AA (DS v1.3) ===
       'react/jsx-no-target-blank': 'error',
       'react/self-closing-comp': 'error',
+      'jsx-a11y/alt-text': 'error',
+      'jsx-a11y/aria-props': 'error',
+      'jsx-a11y/aria-role': 'error',
+      'jsx-a11y/anchor-is-valid': 'warn',
+      'jsx-a11y/click-events-have-key-events': 'warn',
+      'jsx-a11y/label-has-associated-control': 'warn',
     },
   },
 ]
