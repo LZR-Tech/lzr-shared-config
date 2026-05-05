@@ -2,7 +2,9 @@
 
 Configurações compartilhadas de desenvolvimento da **LZR Technologies**.
 
-Baseado no [Engineering Handbook](https://code.lzrtechnologies.com).
+Baseado no [Engineering Handbook v2.3](https://code.lzrtechnologies.com).
+
+> **Padrão LZR (v2.3)**: todos os projetos usam **pnpm** como package manager. Os exemplos abaixo refletem isso.
 
 ## Pacotes
 
@@ -18,7 +20,7 @@ Baseado no [Engineering Handbook](https://code.lzrtechnologies.com).
 ### Projeto Node/API
 
 ```bash
-npm install -D @lzr/tsconfig @lzr/eslint-config @lzr/prettier-config @lzr/commitlint-config
+pnpm add -D @lzr/tsconfig @lzr/eslint-config @lzr/prettier-config @lzr/commitlint-config
 ```
 
 **tsconfig.json:**
@@ -54,7 +56,7 @@ module.exports = { extends: ['@lzr/commitlint-config'] }
 ### Projeto Next.js
 
 ```bash
-npm install -D @lzr/tsconfig @lzr/eslint-config @lzr/prettier-config @lzr/commitlint-config
+pnpm add -D @lzr/tsconfig @lzr/eslint-config @lzr/prettier-config @lzr/commitlint-config
 ```
 
 **tsconfig.json:**
