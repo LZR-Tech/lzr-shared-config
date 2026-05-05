@@ -1,6 +1,32 @@
-# @lzr/shared-config
+# @lzr/shared-config — DEPRECATED
 
-Configurações compartilhadas de desenvolvimento da **LZR Technologies**.
+> ⚠️ **Este repo está descontinuado em 2026-05-05.**
+>
+> O monorepo workspace causava problemas de resolução de imports quando instalado via `github:` deps (cada `@lzr/*` carregava o `package.json` raiz que não declarava `main`/`exports`, exigindo o subpath gambiarra `@lzr/tsconfig/packages/tsconfig/...`).
+>
+> Os 4 pacotes foram **separados em repos standalone**. Use os novos repos diretamente:
+>
+> | Antes (deprecated) | Agora |
+> |---|---|
+> | `github:LZR-Tech/lzr-shared-config#main` (como `@lzr/tsconfig`) | [`github:LZR-Tech/lzr-tsconfig#main`](https://github.com/LZR-Tech/lzr-tsconfig) |
+> | `github:LZR-Tech/lzr-shared-config#main` (como `@lzr/eslint-config`) | [`github:LZR-Tech/lzr-eslint-config#main`](https://github.com/LZR-Tech/lzr-eslint-config) |
+> | `github:LZR-Tech/lzr-shared-config#main` (como `@lzr/prettier-config`) | [`github:LZR-Tech/lzr-prettier-config#main`](https://github.com/LZR-Tech/lzr-prettier-config) |
+> | `github:LZR-Tech/lzr-shared-config#main` (como `@lzr/commitlint-config`) | [`github:LZR-Tech/lzr-commitlint-config#main`](https://github.com/LZR-Tech/lzr-commitlint-config) |
+>
+> ### Migração (em projetos existentes)
+>
+> 1. No `package.json`, trocar as 4 linhas que apontam para `lzr-shared-config` pelos novos repos.
+> 2. No `tsconfig`, trocar `extends: "@lzr/tsconfig/packages/tsconfig/X"` por `extends: "@lzr/tsconfig/X"`.
+> 3. No `eslint.config.mjs`, trocar `from '@lzr/eslint-config/packages/eslint-config/index.mjs'` por `from '@lzr/eslint-config'`.
+> 4. `pnpm install` e validar gate (`pnpm type-check && pnpm lint && pnpm test`).
+>
+> Este repo será **arquivado** quando todos os projetos LZR estiverem migrados.
+
+---
+
+## Histórico
+
+Configurações compartilhadas de desenvolvimento da **LZR Technologies** — versão monorepo.
 
 Baseado no [Engineering Handbook](https://code.lzrtechnologies.com).
 
